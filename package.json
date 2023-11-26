@@ -1,0 +1,31 @@
+{
+  "name": "next-tick",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gitlab-az1/next-tick.git",
+  "author": "gitlab-az1 <gitlab.az1@gmail.com>",
+  "license": "GPL-2.0-only",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly && babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored && node ./post-build.js",
+    "hot": "yarn build && clear && node ./dist/index.js && rm -r ./dist/",
+    "spec": "clear && jest --verbose"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.3",
+    "@babel/node": "^7.22.19",
+    "@babel/plugin-transform-class-properties": "^7.23.3",
+    "@babel/plugin-transform-private-methods": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.10",
+    "@types/node": "^20.10.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.3.2"
+  }
+}
